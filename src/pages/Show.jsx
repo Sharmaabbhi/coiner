@@ -62,168 +62,194 @@ export default function Show() {
           </AreaChart>
         </ResponsiveContainer>
         <div className="details">
-          <div>
-            <span className="key">Market Cap Rank</span>
-            <span className="value">#{store.data.market_cap_rank}</span>
-          </div>
-          <div>
-            <span className="key">Current Price</span>
-            <span className="value">
-              ${store.data.market_data.current_price.usd.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">24h High</span>
-            <span className="value">
-              ${store.data.market_data.high_24h.usd.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">24h Low</span>
-            <span className="value">
-              ${store.data.market_data.low_24h.usd.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">24h Change</span>
-            <span className="value">
-              {store.data.market_data.price_change_percentage_24h > 0 ? (
-                <span className="up">
-                  <svg
-                    height="8px"
-                    viewBox="0 -960 423.99998 267.99999"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m 60,-732 q -9,0 -14.5,-6 -5.5,-6 -5.5,-14 0,-2 6,-14 l 144.99999,-145 q 5,-5 10,-7 5,-2 11,-2 6,0 11,2 5,2 10,7 l 145,145 q 3,3 4.5,6.5 1.5,3.5 1.5,7.5 0,8 -5.5,14 -5.5,6 -14.5,6 z"
-                      id="path2"
-                    />
-                  </svg>
-                  <span>
-                    {store.data.market_data.price_change_percentage_24h.toFixed(
-                      2,
-                    )}
-                    %
-                  </span>
-                </span>
-              ) : (
-                <span className="down">
-                  <svg
-                    height="8px"
-                    viewBox="0 -960 423.99998 267.99999"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m 60,-920 q -9,0 -14.5,6 -5.5,6 -5.5,14 0,2 6,14 l 144.99999,145 q 5,5 10,7 5,2 11,2 6,0 11,-2 5,-2 10,-7 l 145,-145 q 3,-3 4.5,-6.5 1.5,-3.5 1.5,-7.5 0,-8 -5.5,-14 -5.5,-6 -14.5,-6 z"
-                      id="path2"
-                    />
-                  </svg>
-                  <span>
-                    {Math.abs(
-                      store.data.market_data.price_change_percentage_24h.toFixed(
+          {store.data.market_cap_rank !== null && (
+            <div>
+              <span className="key">Market Cap Rank</span>
+              <span className="value">#{store.data.market_cap_rank}</span>
+            </div>
+          )}
+          {store.data.market_data.current_price.usd !== null && (
+            <div>
+              <span className="key">Current Price</span>
+              <span className="value">
+                ${store.data.market_data.current_price.usd.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.high_24h.usd !== null && (
+            <div>
+              <span className="key">24h High</span>
+              <span className="value">
+                ${store.data.market_data.high_24h.usd.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.low_24h.usd !== null && (
+            <div>
+              <span className="key">24h Low</span>
+              <span className="value">
+                ${store.data.market_data.low_24h.usd.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.price_change_percentage_24h !== null && (
+            <div>
+              <span className="key">24h Change</span>
+              <span className="value">
+                {store.data.market_data.price_change_percentage_24h > 0 ? (
+                  <span className="up">
+                    <svg
+                      height="8px"
+                      viewBox="0 -960 423.99998 267.99999"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m 60,-732 q -9,0 -14.5,-6 -5.5,-6 -5.5,-14 0,-2 6,-14 l 144.99999,-145 q 5,-5 10,-7 5,-2 11,-2 6,0 11,2 5,2 10,7 l 145,145 q 3,3 4.5,6.5 1.5,3.5 1.5,7.5 0,8 -5.5,14 -5.5,6 -14.5,6 z"
+                        id="path2"
+                      />
+                    </svg>
+                    <span>
+                      {store.data.market_data.price_change_percentage_24h.toFixed(
                         2,
-                      ),
-                    )}
-                    %
+                      )}
+                      %
+                    </span>
                   </span>
-                </span>
-              )}
-            </span>
-          </div>
-          <div>
-            <span className="key">1y Change</span>
-            <span className="value">
-              {store.data.market_data.price_change_percentage_1y > 0 ? (
-                <span className="up">
-                  <svg
-                    height="8px"
-                    viewBox="0 -960 423.99998 267.99999"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m 60,-732 q -9,0 -14.5,-6 -5.5,-6 -5.5,-14 0,-2 6,-14 l 144.99999,-145 q 5,-5 10,-7 5,-2 11,-2 6,0 11,2 5,2 10,7 l 145,145 q 3,3 4.5,6.5 1.5,3.5 1.5,7.5 0,8 -5.5,14 -5.5,6 -14.5,6 z"
-                      id="path2"
-                    />
-                  </svg>
-                  <span>
-                    {store.data.market_data.price_change_percentage_1y.toFixed(
-                      2,
-                    )}
-                    %
+                ) : (
+                  <span className="down">
+                    <svg
+                      height="8px"
+                      viewBox="0 -960 423.99998 267.99999"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m 60,-920 q -9,0 -14.5,6 -5.5,6 -5.5,14 0,2 6,14 l 144.99999,145 q 5,5 10,7 5,2 11,2 6,0 11,-2 5,-2 10,-7 l 145,-145 q 3,-3 4.5,-6.5 1.5,-3.5 1.5,-7.5 0,-8 -5.5,-14 -5.5,-6 -14.5,-6 z"
+                        id="path2"
+                      />
+                    </svg>
+                    <span>
+                      {Math.abs(
+                        store.data.market_data.price_change_percentage_24h.toFixed(
+                          2,
+                        ),
+                      )}
+                      %
+                    </span>
                   </span>
-                </span>
-              ) : (
-                <span className="down">
-                  <svg
-                    height="8px"
-                    viewBox="0 -960 423.99998 267.99999"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m 60,-920 q -9,0 -14.5,6 -5.5,6 -5.5,14 0,2 6,14 l 144.99999,145 q 5,5 10,7 5,2 11,2 6,0 11,-2 5,-2 10,-7 l 145,-145 q 3,-3 4.5,-6.5 1.5,-3.5 1.5,-7.5 0,-8 -5.5,-14 -5.5,-6 -14.5,-6 z"
-                      id="path2"
-                    />
-                  </svg>
-                  <span>
-                    {Math.abs(
-                      store.data.market_data.price_change_percentage_1y.toFixed(
+                )}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.price_change_percentage_1y !== null && (
+            <div>
+              <span className="key">1y Change</span>
+              <span className="value">
+                {store.data.market_data.price_change_percentage_1y > 0 ? (
+                  <span className="up">
+                    <svg
+                      height="8px"
+                      viewBox="0 -960 423.99998 267.99999"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m 60,-732 q -9,0 -14.5,-6 -5.5,-6 -5.5,-14 0,-2 6,-14 l 144.99999,-145 q 5,-5 10,-7 5,-2 11,-2 6,0 11,2 5,2 10,7 l 145,145 q 3,3 4.5,6.5 1.5,3.5 1.5,7.5 0,8 -5.5,14 -5.5,6 -14.5,6 z"
+                        id="path2"
+                      />
+                    </svg>
+                    <span>
+                      {store.data.market_data.price_change_percentage_1y.toFixed(
                         2,
-                      ),
-                    )}
-                    %
+                      )}
+                      %
+                    </span>
                   </span>
-                </span>
-              )}
-            </span>
-          </div>
-          <div>
-            <span className="key">ATH</span>
-            <span className="value">
-              ${store.data.market_data.ath.usd.toLocaleString()} (
-              {formatDate(store.data.market_data.ath_date.usd)})
-            </span>
-          </div>
-          <div>
-            <span className="key">ATL</span>
-            <span className="value">
-              ${store.data.market_data.atl.usd.toLocaleString()} (
-              {formatDate(store.data.market_data.atl_date.usd)})
-            </span>
-          </div>
-          <div>
-            <span className="key">Volume(24h)</span>
-            <span className="value">
-              ${store.data.market_data.total_volume.usd.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">Market Cap</span>
-            <span className="value">
-              ${store.data.market_data.market_cap.usd.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">Total Supply</span>
-            <span className="value">
-              {store.data.market_data.total_supply.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">Circulating Supply</span>
-            <span className="value">
-              {store.data.market_data.circulating_supply.toLocaleString()}
-            </span>
-          </div>
-          <div>
-            <span className="key">Website</span>
-            <Link to={store.data.links.homepage[0]} className="coinLink">
-              {store.data.links.homepage[0]}
-            </Link>
-          </div>
+                ) : (
+                  <span className="down">
+                    <svg
+                      height="8px"
+                      viewBox="0 -960 423.99998 267.99999"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m 60,-920 q -9,0 -14.5,6 -5.5,6 -5.5,14 0,2 6,14 l 144.99999,145 q 5,5 10,7 5,2 11,2 6,0 11,-2 5,-2 10,-7 l 145,-145 q 3,-3 4.5,-6.5 1.5,-3.5 1.5,-7.5 0,-8 -5.5,-14 -5.5,-6 -14.5,-6 z"
+                        id="path2"
+                      />
+                    </svg>
+                    <span>
+                      {Math.abs(
+                        store.data.market_data.price_change_percentage_1y.toFixed(
+                          2,
+                        ),
+                      )}
+                      %
+                    </span>
+                  </span>
+                )}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.ath.usd !== null && (
+            <div>
+              <span className="key">ATH</span>
+              <span className="value">
+                ${store.data.market_data.ath.usd.toLocaleString()} (
+                {formatDate(store.data.market_data.ath_date.usd)})
+              </span>
+            </div>
+          )}
+          {store.data.market_data.atl.usd !== null && (
+            <div>
+              <span className="key">ATL</span>
+              <span className="value">
+                ${store.data.market_data.atl.usd.toLocaleString()} (
+                {formatDate(store.data.market_data.atl_date.usd)})
+              </span>
+            </div>
+          )}
+          {store.data.market_data.total_volume.usd !== null && (
+            <div>
+              <span className="key">Volume(24h)</span>
+              <span className="value">
+                ${store.data.market_data.total_volume.usd.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.market_cap.usd !== null && (
+            <div>
+              <span className="key">Market Cap</span>
+              <span className="value">
+                ${store.data.market_data.market_cap.usd.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.total_supply !== null && (
+            <div>
+              <span className="key">Total Supply</span>
+              <span className="value">
+                {store.data.market_data.total_supply.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.market_data.circulating_supply !== null && (
+            <div>
+              <span className="key">Circulating Supply</span>
+              <span className="value">
+                {store.data.market_data.circulating_supply.toLocaleString()}
+              </span>
+            </div>
+          )}
+          {store.data.links.homepage[0] && (
+            <div>
+              <span className="key">Website</span>
+              <Link to={store.data.links.homepage[0]} className="coinLink">
+                {store.data.links.homepage[0]}
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
