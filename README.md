@@ -1,4 +1,5 @@
 Crypto Coiner
+
 Link: https://crypto-coiner.vercel.app/
 
 Crypto Coiner is a web application that allows users to monitor real-time cryptocurrency prices and trends. The platform provides up-to-date data on various cryptocurrencies, enabling users to track the market and make informed decisions.
