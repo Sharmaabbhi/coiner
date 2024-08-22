@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: rgba(13, 17, 23);
+  color: rgba(230, 237, 243, 1);
+  font-size: 20px;
+  letter-spacing: 1px;
+  word-spacing: 1.5px;
+  line-height: 1.4em;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(230, 237, 243);
+}
+
+.width {
+  max-width: 600 px;
+  margin: 0 auto;
+  width: 92%;
+}
+
+.header {
+  background-color: rgba(1, 4, 9, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+
+  .width {
+    position: relative;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  a {
+    color: white;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -12px;
+  }
+}
+
+.home-search {
+  display: flex;
+  padding: 40px 0;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    padding: 0 24px;
+    line-height: 54px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 40%;
+  }
+}
+
+.up {
+  color: rgb(50, 202, 91);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+
+.down {
+  color: rgb(255, 58, 51);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+}
+
+.trending {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin-bottom: 40px;
+  border-spacing: 0;
+  min-width: 50%;
+
+  thead {
+    background-color: rgba(1, 4, 9, 1);
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  td,
+  th {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  th:first-child,
+  tr:first-child td:first-child {
+    border-top-left-radius: 8px;
+  }
+
+  th:last-child,
+  tr:first-child td:last-child {
+    border-top-right-radius: 8px;
+  }
+
+  tbody {
+    td:first-child {
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+
+        span {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .symbol {
+          font-size: 16px;
+          color: rgba(230, 237, 243, 0.5);
+        }
+      }
+    }
+
+    .logo {
+      height: 50px;
+      width: 50px;
+    }
+
+    .trendImg {
+      height: 50px;
+      width: 135px;
+    }
+
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+
+      td:first-child {
+        border-bottom-left-radius: 8px;
+      }
+
+      td:last-child {
+        border-bottom-right-radius: 8px;
+      }
+    }
+
+    tr:hover {
+      background-color: rgba(1, 4, 9, 0.5);
+      cursor: pointer;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 40px 0;
+
+  .logo {
+    height: 150px;
+    width: 150px;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 18px;
+    max-width: 80%;
+    color: rgba(230, 237, 243, 0.8);
+
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+      color: rgba(230, 237, 243, 1);
+    }
+  }
+
+  .details {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    min-width: 60%;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    div:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .key {
+      font-weight: 500;
+    }
+
+    .value {
+      color: rgba(230, 237, 243, 0.8);
+      font-size: 18px;
+    }
+
+    .coinLink {
+      color: rgba(230, 237, 243, 1);
+      font-size: 18px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.recharts-surface {
+  overflow: visible;
+}
